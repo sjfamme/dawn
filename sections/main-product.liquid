@@ -384,11 +384,15 @@
 
 
             	{% for tag in product.tags %}
+
         			{% if tag contains "USP" %}
   						{% assign t = tag | split: "_" %}
 					    <p> {{ t[1] | plus: t[2] }} </p>
                     {% endif%}
-				        <p> {{ tag }} </p>
+		
+        			{% if tag contains "composition" %}
+				        <p> {{ tag | slice: 12, tag.size }} </p>
+        			{% endif %}
     		    {% endfor %}
 
         		<div class="product__description rte">
