@@ -382,30 +382,20 @@
         
             {%- if product.description != blank -%}
 
+                <ul>
+                    {% for tag in product.tags %}
+                        {% if tag contains "USP" %}
+                            {% assign t1 = tag | slice: 4, tag.size %}
+                            {% assign t2 = t1 | replace: "_", " " %}
+                            <li> {{ t2 }} </li>
+                        {% endif%}
 
-            {% comment %} ====== GET CURRENT GROUP ====== {% endcomment %}
-            {% for tag in product.tags %}
-                {% if tag contains "group-" %}
-                    {% capture current_group_tag %}{{ tag | strip }}{% endcapture %}
-                    {% capture current_prefix %}{{ current_group_tag | replace: 'group-', '' | handleize }}{% endcapture %}
-                {% endif %}
-            {% endfor %}
+                        {% if tag contains "composition" %}
+                            <li> {{ tag | slice: 12, tag.size }} </li>
+                        {% endif %}
+                    {% endfor %}
 
-
-            {% comment %} ====== CHECK IF MORE THAN 1 PRODUCT IN GROUP ====== {% endcomment %}
-            {% paginate collections.all.products by 1000 %}
-                {% for product in collections.all.products %}
-                    {% if product.tags contains current_group_tag %}
-                        {% assign tagCount = tagCount | plus: 1 %}
-                    {% endif %}
-                {% endfor %}
-            {% endpaginate %}
-
-            <!-- {{ current_group_tag }} // ie: "group-Vortex-Leggings"-->
-            <!-- {{ current_prefix }} // ie: "Vortex Leggings"-->
-            <!-- {{ tagCount }} // ie: "The number of products in this group"-->
-
-
+                </ul>
 
         		<div class="product__description rte">
                 	
