@@ -307,9 +307,8 @@
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
 
-            <!-- /snippets/product-groups.liquid -->
+        
             <div class="product-groups">
-
                 {% comment %} ====== ASSIGN VARIABLES ====== {% endcomment %}
                 {% assign tagCount = 0 %}
 
@@ -425,6 +424,7 @@
                     </div>
                 {% endif %}
             </div>
+        
 
         	{% for tag in product.tags %}
         		{% if tag == "sizing_recommendation:up" %}
