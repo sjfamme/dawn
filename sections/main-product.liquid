@@ -370,7 +370,7 @@
                             {% if product.tags contains current_group_tag %}
                                 {% unless current_product_title == product.title %}
                   
-                  					<div style="display: inline-block;">
+                  					<div style="display: inline-block;" id="other_product_colors_img">
                                         <a href="{{ product.url }}" data-toggle="toggle{{ itemID }}" class="other-product-image">
                                             <img loading="lazy" src="{{ product | img_url: '63x95', crop: 'center' }}" alt="{{ product.title }}">
                                         </a>
@@ -381,6 +381,11 @@
                             {% endif %}
                         {% endfor %}
                     {% endpaginate %}
+                  <style>
+                    #other_product_colors_img a:hover{
+                      border: 1px groove black;
+                    }
+                  </style>
 
                     <div class="product-groups__titles">
 
