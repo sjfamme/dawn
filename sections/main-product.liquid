@@ -306,6 +306,10 @@
             <div class="no-js-hidden" id="price-{{ section.id }}">
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
+        
+        {{ product }}
+        
+        
         	{% for tag in product.tags %}
         		{% if tag == "sizing_recommendation:up" %}
         			{% capture sizing_recommendation %}{{ 'products.sizing_recommendation_up' | t }}{% endcapture %}
@@ -394,12 +398,10 @@
         			{% if tag contains "composition" %}
 				        <li> {{ tag | slice: 12, tag.size }} </li>
         			{% endif %}
-    		    {% endfor %}
-              
+    		    {% endfor %}              
         	</ul>
-
+        
         		<div class="product__description rte">
-                	
                   {{ product.description }}
               	</div>
             {%- endif -%}
