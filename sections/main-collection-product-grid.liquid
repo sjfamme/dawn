@@ -490,7 +490,7 @@
                         {% if product.tags contains current_group_tag %}
                             {% unless current_product_title == product.title %}
                                 <a href="{{ product.url }}" data-toggle="toggle{{ itemID }}" class="other-product-image">
-                                    <img loading="lazy" src="{{ product | img_url: '200x300', crop: 'center' }}" alt="{{ product.title }}">
+                                    <img loading="lazy" src="{{ product | img_url: '35x35', crop: 'center' }}" alt="{{ product.title }}">
                                 </a>
                                 {% assign itemID = itemID | plus: 1 %}
                             {% endunless %}
