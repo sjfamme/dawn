@@ -510,12 +510,10 @@
         			{% if tag contains "composition" %}
 				        <li> {{ tag | slice: 12, tag.size }} </li>
         			{% endif %}
-    		    {% endfor %}
-              
+    		    {% endfor %}              
         	</ul>
-
+        
         		<div class="product__description rte">
-                	
                   {{ product.description }}
               	</div>
             {%- endif -%}
