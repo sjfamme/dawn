@@ -74,7 +74,6 @@
                     >
                   </div>
                 {%- endif -%}
-                <script>console.log({{ product | json }});</script>
               </noscript>
               <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ section.id }}">
                 <button id="ProductThumbnail-featured" class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
@@ -395,6 +394,7 @@
                             </div>
 
                             {% assign labelID = 2 %}
+                <script>console.log({{ product | json }});</script>
 
                             {% comment %} ====== OTHER COLOR NAMES ====== {% endcomment %}
                             {% paginate collections.all.products by 1000 %}
