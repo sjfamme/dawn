@@ -387,9 +387,8 @@
         			{% if tag contains "USP" %}
   						{% assign t = tag | split: "_" %}
 					    <p> {{ tag[1] | plus: tag[2] }} </p>
-        			{% elsif tag contains "composition" %}
-				        <p> {{ tag | plus: "hey" }} </p>
                     {% endif%}
+				        <p> {{ tag }} </p>
     		    {% endfor %}
 
         		<div class="product__description rte">
