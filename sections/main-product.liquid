@@ -386,8 +386,9 @@
             	{% for tag in product.tags %}
 
         			{% if tag contains "USP" %}
-  						{% assign t = tag | slice: 3, tag.size %}
-					    <p> {{ t }} </p>
+  						{% assign t1 = tag | slice: 4, tag.size %}
+        				{% assign t2 = t1 | replace: "_", " " %}
+					    <p> {{ t2 }} </p>
                     {% endif%}
 		
         			{% if tag contains "composition" %}
