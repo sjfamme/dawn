@@ -383,18 +383,20 @@
             {%- if product.description != blank -%}
 
 
+        	<ul>
             	{% for tag in product.tags %}
-
         			{% if tag contains "USP" %}
   						{% assign t1 = tag | slice: 4, tag.size %}
         				{% assign t2 = t1 | replace: "_", " " %}
-					    <p> {{ t2 }} </p>
+					    <li> {{ t2 }} </li>
                     {% endif%}
 		
         			{% if tag contains "composition" %}
-				        <p> {{ tag | slice: 12, tag.size }} </p>
+				        <li> {{ tag | slice: 12, tag.size }} </li>
         			{% endif %}
     		    {% endfor %}
+              
+        	</ul>
 
         		<div class="product__description rte">
                 	
