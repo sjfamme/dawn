@@ -388,7 +388,7 @@
   						{% assign t = tag | split: "_" %}
 					    <p> {{ tag[1] | plus: tag[2] }} </p>
         			{% elsif tag contains "composition" %}
-				        <p> {{ tag | slice: 12, tag.size }} </p>
+				        <p> {{ tag | slice: 12, 15 }} </p>
                     {% endif%}
     		    {% endfor %}
 
