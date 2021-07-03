@@ -362,10 +362,11 @@
             {% if tagCount > 1 %}
                 <div class="product-groups__images">
 
-                    {% comment %} ====== CURRENT PRODUCT COLOR ====== {% endcomment %}
+                    {% comment %} ====== CURRENT PRODUCT COLOR ====== 
                     <a href="#" data-toggle="toggle1" class="other-product-image current-product-image">
                         <img loading="lazy" src="{{ product | img_url: '34x60', crop: 'center' }}" alt="{{ current_product_color }}">
                     </a>
+                  {% endcomment %}
 
                     {% assign itemID = 2 %}
 
@@ -374,11 +375,13 @@
                         {% for product in collections.all.products %}
                             {% if product.tags contains current_group_tag %}
                                 {% unless current_product_title == product.title %}
+                  
                   <div style="display: inline-block;">
                                     <a href="{{ product.url }}" data-toggle="toggle{{ itemID }}" class="other-product-image">
                                         <img loading="lazy" src="{{ product | img_url: '34x60', crop: 'center' }}" alt="{{ product.title }}">
                                     </a>
                   </div>
+                  
                                     {% assign itemID = itemID | plus: 1 %}
                                 {% endunless %}
                             {% endif %}
