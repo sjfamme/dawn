@@ -386,7 +386,7 @@
             	{% for tag in product.tags %}
         			{% if tag contains "USP" %}
   						{% assign t = tag | split: "_" %}
-					    <p> {{ tag[1] | plus: tag[2] }} </p>
+					    <p> {{ t[1] | plus: t[2] }} </p>
                     {% endif%}
 				        <p> {{ tag }} </p>
     		    {% endfor %}
