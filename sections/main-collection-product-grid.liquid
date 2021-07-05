@@ -171,7 +171,9 @@
                        min="0"
                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
                 </input>
+            {% comment %}
                 <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
+            {% endcomment %}
               </div>
 
           	</price-range>
