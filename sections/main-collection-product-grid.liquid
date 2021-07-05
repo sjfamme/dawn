@@ -213,9 +213,9 @@
                     <details class="mobile-facets__details js-filter" data-index="mobile-{{ forloop.index }}">
                       <summary class="mobile-facets__summary">
                         <div>
-                        <h1> TEST TEST TEST </h1>
                           <span>{{ filter.label | escape }}</span>
                           <span class="count-bubble">
+                        <h1> TEST TEST TEST </h1>
                             {%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}
                           </span>
                           <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
