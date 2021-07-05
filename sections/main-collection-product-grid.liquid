@@ -29,6 +29,8 @@
         
         
 			<div class="facets__wrapper">
+              
+              <!-- Teksen over filterne -->
               {% comment %}
 				{%- unless collection.filters == empty -%}
 					<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
@@ -39,7 +41,6 @@
 					{%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
 					
               
-              <!--
               {% case filter.type %}
 
               			{% when 'list' %}
@@ -168,7 +169,6 @@
                     </div>
            
               {% endcase %}
-                      -->
 
             {%- endfor -%}
             <noscript>
