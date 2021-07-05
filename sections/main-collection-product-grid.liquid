@@ -192,7 +192,8 @@
     <script>console.log({{ collection | json }});</script>
     {% if collection.title contains "Bra" %}
     
-    
+            <details class="disclosure-has-popup facets__disclosure js-filter">
+
        
           <!-- Label på filteret, "Støttegradering" -->
           <summary class="facets__summary">
@@ -229,6 +230,7 @@
             </ul>
             
           </div>
+    </details>
                   {% endcomment %}
 
         
