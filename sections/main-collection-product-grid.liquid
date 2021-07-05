@@ -99,11 +99,6 @@
         
         
         
-        
-        
-        
-        
-        
         <!-- Prisen -->
         {% when 'price_range' %}
         {% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
@@ -189,6 +184,9 @@
       	</details>
     {% endcase %}
     
+    
+    
+    <!--
     
         <details class="disclosure-has-popup facets__disclosure js-filter" >
        
@@ -276,6 +274,7 @@
         </details>
         
         
+  -->
     
     
     {%- endfor -%}
@@ -284,6 +283,9 @@
       <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
     </noscript>
     </div>
+  
+  
+  
   
   
   
