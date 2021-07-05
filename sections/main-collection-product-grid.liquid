@@ -132,42 +132,46 @@
                     <price-range class="facets__price">
                     	<div class="field">
                         	<span class="field__currency">{{ cart.currency.symbol }}</span>
-                        		<input class="field__input"
-                          		name="{{ filter.min_value.param_name }}"
-                          id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                          {%- if filter.min_value.value -%}
-                            {%- if uses_comma_decimals -%}
-                              value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                            {%- else -%}
-                              value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
-                            {% endif %}
-                          {%- endif -%}
-                          type="number"
-                          placeholder="0"
-                          min="0"
-                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
-                        <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
-                      </div>
-                      <div class="field">
-                        <span class="field__currency">{{ cart.currency.symbol }}</span>
-                        <input class="field__input"
-                          name="{{ filter.max_value.param_name }}"
-                          id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                          {%- if filter.max_value.value -%}
-                            {%- if uses_comma_decimals -%}
-                              value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                            {%- else -%}
-                              value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
-                            {% endif %}
-                          {%- endif -%}
-                          type="number"
-                          placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                          min="0"
-                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
-                        </input>
-                        <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
-                      </div>
+                        	<input class="field__input"
+                                   name="{{ filter.min_value.param_name }}"
+                                   id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                                   {%- if filter.min_value.value -%}
+                                   {%- if uses_comma_decimals -%}
+                                   value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                   {%- else -%}
+                                   value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                   {% endif %}
+                                   {%- endif -%}
+                                   type="number"
+                                   placeholder="0"
+                                   min="0"
+                                   max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+
+                          	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
+                      	</div>
+                      
+                      	<div class="field">
+                        	<span class="field__currency">{{ cart.currency.symbol }}</span>
+                        	<input  class="field__input"
+                                    name="{{ filter.max_value.param_name }}"
+                                    id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                                    {%- if filter.max_value.value -%}
+                                      {%- if uses_comma_decimals -%}
+                                        value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                      {%- else -%}
+                                        value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                      {% endif %}
+                                    {%- endif -%}
+                                    type="number"
+                                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                    min="0"
+                                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+	                        
+                          	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
+                      	</div>
                     </div>
+                    <!-- End facets__display -->
+                      
                   </price-range>
                 </details>
       			<!-- End details -->
