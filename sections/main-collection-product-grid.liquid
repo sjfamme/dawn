@@ -134,6 +134,7 @@
               <div class="field">
                 <span class="field__currency">{{ cart.currency.symbol }}</span>
                 <input class="field__input"
+            {% comment %}
                        name="{{ filter.min_value.param_name }}"
                        id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
                        {%- if filter.min_value.value -%}
@@ -146,6 +147,7 @@
                        type="number"
                        placeholder="0"
                        min="0"
+            {% endcomment %}
                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
                 </input>
               	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
