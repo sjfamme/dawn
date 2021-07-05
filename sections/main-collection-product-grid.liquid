@@ -24,11 +24,10 @@
       <!-- Filtrering -->
       
       <form id="CollectionFiltersForm" class="facets__form">
+        <!--
         
-        <!-- Hoved bar -->
         {% if section.settings.enable_filtering %}
 
-        	<!-- Start facets__wrapper -->
 			<div class="facets__wrapper">
 				{%- unless collection.filters == empty -%}
 					<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
@@ -40,10 +39,8 @@
 
               			{% when 'list' %}
               
-              				<!-- Start details -->
 							<details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
 
-                              <!-- Start facets__summary -->
                               <summary class="facets__summary">
 				            		<div>
                                 		<span>{{ filter.label | escape }}</span>
@@ -51,19 +48,14 @@
                       					{% render 'icon-caret' %}
 				                    </div>
                             	</summary>
-                              <!-- End facets__summary -->
 
-                              	<!-- Start facets__display -->
                                 <div class="facets__display">
                                   
-                                  	<!-- Start facets__header -->
                                     <div class="facets__header">
                                         <span class="facets__selected no-js-hidden">{{ 'sections.collection_template.filters_selected' | t: count: filter.active_values.size }}</span>
                                         <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
                                     </div>
-                                  	<!-- End facets__header -->
 
-                                  	<!-- Start facets__list -->
                                     <ul class="facets__list list-unstyled" role="list">
                                         {%- for value in filter.values -%}
                                             <li class="list-menu__item facets__item">
@@ -91,16 +83,12 @@
                                             </li>
                                         {%- endfor -%}
                                     </ul>
-                                  	<!-- End facets__list -->
                                   
                                 </div>
-                              	<!-- End facets__display -->
                               
                 			</details>
-              				<!-- End details -->
               
 
-              <!-- Start case -->
               	{% when 'price_range' %}
               		{% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
                 	{% assign uses_comma_decimals = false %}
@@ -108,7 +96,6 @@
                   		{% assign uses_comma_decimals = true %}
                 	{% endif %}
 
-              		<!-- Start details -->
                 	<details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
                   		<summary class="facets__summary">
                     		<div>
@@ -120,16 +107,16 @@
                   
                   
                   
-                  	<!-- Start facets__display -->
                   	<div class="facets__display">
-                  		<div class="facets__header">
+
+                      	<div class="facets__header">
                       		{%- assign max_price_amount = filter.range_max | money | escape -%}
                       		<span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
                       		<a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
                     	</div>
                     
-                        <!-- Start price range -->
                         <price-range class="facets__price">
+                          
                             <div class="field">
                                 <span class="field__currency">{{ cart.currency.symbol }}</span>
                                 <input class="field__input"
@@ -171,16 +158,10 @@
                             </div>
                     
                       	</price-range>
-                		<!-- End price range -->
                           
                     </div>
-                    <!-- End facets__display -->
-     
-              	</details>
-      			<!-- End details -->
-      
+           
               {% endcase %}
-      		  <!-- End case -->
 
             {%- endfor -%}
             <noscript>
@@ -188,7 +169,6 @@
             </noscript>
           </div>
   
-  <!-- End facets__wrapper -->
 
 
   
@@ -216,6 +196,8 @@
 
         {% endif %}
 
+              -->
+              
 
 <!-- Hmm
 
