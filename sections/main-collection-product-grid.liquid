@@ -14,17 +14,28 @@
 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
 
 <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
-  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-    {%- assign total_active_values = 0 -%}
-    <collection-filters-form class="facets small-hide">
-      <form id="CollectionFiltersForm" class="facets__form">
-        {% if section.settings.enable_filtering %}
-          <div class="facets__wrapper">
-            {%- unless collection.filters == empty -%}
-              <p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
-            {%- endunless -%}
 
-            {%- for filter in collection.filters -%}
+  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  
+  {%- assign total_active_values = 0 -%}
+  
+  <collection-filters-form class="facets small-hide">
+  
+    <form id="CollectionFiltersForm" class="facets__form">
+    
+      {% if section.settings.enable_filtering %}
+      
+      <div class="facets__wrapper">
+        
+        <!-- Tittel på filtrering -->
+        {% comment %}
+        {%- unless collection.filters == empty -%}
+        	<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
+        {%- endunless -%}
+		{% endcomment %}
+      
+        
+        {%- for filter in collection.filters -%}
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               {% case filter.type %}
               {% when 'list' %}
