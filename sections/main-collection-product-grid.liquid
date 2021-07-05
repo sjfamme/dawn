@@ -185,7 +185,8 @@
     
     <!-- CUstom -->
     <script>console.log({{ collection | json }});</script>
-    {% comment %}
+    {% if collection.title contains "Bra" %}
+    
     
         <details class="disclosure-has-popup facets__disclosure js-filter" >
        
@@ -229,7 +230,7 @@
         </details>
         
         
-  {% endcomment %}
+  {% endif %}
     
     
     {%- endfor -%}
