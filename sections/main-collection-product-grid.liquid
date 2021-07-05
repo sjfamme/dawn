@@ -13,12 +13,15 @@
 
 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
 
-<!--
 
+<!-- Hoved -->
 <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     {%- assign total_active_values = 0 -%}
     <collection-filters-form class="facets small-hide">
+      
+      <!--
+      
       <form id="CollectionFiltersForm" class="facets__form">
         {% if section.settings.enable_filtering %}
           <div class="facets__wrapper">
@@ -186,6 +189,11 @@
           </div>
         {%- endif -%}
       </form>
+
+-->
+
+
+
     </collection-filters-form>
     <menu-drawer class="mobile-facets__wrapper">
       <details class="disclosure-has-popup medium-hide large-up-hide">
@@ -561,8 +569,6 @@
     {%- endif -%}
   {%- endpaginate -%}
 </div>
-
--->
 
 {% schema %}
 {
