@@ -28,6 +28,7 @@
         <!-- Hoved bar -->
         {% if section.settings.enable_filtering %}
 
+        	<!-- Start facets__wrapper -->
 			<div class="facets__wrapper">
 				{%- unless collection.filters == empty -%}
 					<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
@@ -160,6 +161,8 @@
               <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
             </noscript>
           </div>
+  
+  <!-- End facets__wrapper -->
 
 
   
