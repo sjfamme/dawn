@@ -172,9 +172,6 @@
                        min="0"
                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
                 </input>
-            {% comment %}
-                <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
-            {% endcomment %}
               </div>
 
           	</price-range>
@@ -186,7 +183,6 @@
     
     
     
-    {% comment %}
     
         <details class="disclosure-has-popup facets__disclosure js-filter" >
        
@@ -202,8 +198,8 @@
           
           <div class="facets__display">
 
-              <script>console.log({{ filter.label | json }});</script>
-            
+            <ul class="facets__list list-unstyled" role="list">
+
               <li class="list-menu__item facets__item">
                 <label class="facet-checkbox" >
                   <input type="checkbox"
@@ -230,7 +226,6 @@
         </details>
         
         
-  {% endcomment %}
     
     
     {%- endfor -%}
