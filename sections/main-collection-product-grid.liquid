@@ -38,6 +38,8 @@
         {%- for filter in collection.filters -%}
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
+        
+        <!-- De som er lister, feks tilgjengelighet og størrelse -->
         {% when 'list' %}
 
         <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
@@ -89,11 +91,10 @@
               </li>
               {%- endfor -%}
             </ul>
-            
-            
-            
-                  </div>
-                </details>
+          </div>
+        </details>
+        
+        
               {% when 'price_range' %}
                 {% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
                 {% assign uses_comma_decimals = false %}
