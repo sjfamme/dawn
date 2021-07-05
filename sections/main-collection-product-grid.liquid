@@ -26,7 +26,7 @@
       <form id="CollectionFiltersForm" class="facets__form">
         {% if section.settings.enable_filtering %}
 
-        <!--
+        
         <div class="facets__wrapper">
             {%- unless collection.filters == empty -%}
               <p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
@@ -146,7 +146,9 @@
             </noscript>
           </div>
   
-  -->
+  
+        
+        <!-- Hmmm
 
           <div class="active-facets active-facets-desktop">
             <a href="{{ collection.url }}?sort_by={{ sort_by }}" class="active-facets__button button button--secondary js-facet-remove">{{ 'sections.collection_template.clear_all' | t }}</a>
@@ -173,7 +175,9 @@
           <input type="hidden" name="q" value="{{ collection.current_vendor }}{{ collection.current_type }}">
         {% endif %}
 
-        <!--
+-->
+
+        <!-- Hmmm
         
         {%- if section.settings.enable_sorting -%}
           <div class="collection-filters__item sorting">
