@@ -207,7 +207,7 @@
           <div class="facets__display">
             <ul class="facets__list list-unstyled" role="list">
               <li class="list-menu__item facets__item">
-                <label class="facet-checkbox" >
+                <label class="facet-checkbox" for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
                   <input type="checkbox"
                          name="Støttegradering"
                          value="well"
