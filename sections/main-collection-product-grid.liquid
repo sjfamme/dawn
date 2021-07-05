@@ -258,7 +258,7 @@
                         <div class="no-js-hidden mobile-facets__footer">
                           <a href="{{ collection.url }}" class="mobile-facets__clear button button--secondary js-facet-remove">{{ 'sections.collection_template.clear' | t }}</a>
                           <button type="button" class="no-js-hidden button button--primary" onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()">{{ 'sections.collection_template.apply' | t }}</button>
-                          <noscript><button class="button button--primary">{{ 10 | t }}</button></noscript>
+                          <noscript><button class="button button--primary">{{ 'sections.collection_template.apply' | t }}</button></noscript>
                         </div>
                       </div>
                     </details>
@@ -267,6 +267,7 @@
                       <summary class="mobile-facets__summary">
                         <div>
                           <span>{{ filter.label | escape }}</span>
+                          <span> <p> yoo </p> </span>
                           <span class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
                           <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
                           <noscript>{% render 'icon-caret' %}</noscript>
