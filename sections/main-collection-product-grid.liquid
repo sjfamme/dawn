@@ -212,11 +212,8 @@
                   {% when 'list' %}
                     <details class="mobile-facets__details js-filter" data-index="mobile-{{ forloop.index }}">
                       <summary class="mobile-facets__summary">
-                        
-                        <h1> TEST TEST TEST </h1>
-                        
-                        
                         <div>
+                        <h1> TEST TEST TEST </h1>
                           <span>{{ filter.label | escape }}</span>
                           <span class="count-bubble">
                             {%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}
