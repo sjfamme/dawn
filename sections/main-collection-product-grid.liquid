@@ -119,11 +119,13 @@
           <div class="facets__display">
 
             <!-- Tittel (Pris) -->
+            {% comment %}
             <div class="facets__header">
               {%- assign max_price_amount = filter.range_max | money | escape -%}
               <span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
               <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
             </div>
+            {% endcomment %}
 
             <!-- Rangen fra det billigste til dyreste objektet -->
             <price-range class="facets__price">
