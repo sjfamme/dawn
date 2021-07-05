@@ -16,34 +16,34 @@
 <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
 
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-  
+
   {%- assign total_active_values = 0 -%}
-  
+
   <collection-filters-form class="facets small-hide">
-  
+
     <form id="CollectionFiltersForm" class="facets__form">
-    
+
       {% if section.settings.enable_filtering %}
-      
+
       <div class="facets__wrapper">
-        
+
         {%- unless collection.filters == empty -%}
         {% comment %}
         	<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
 		{% endcomment %}
         	<p class="facets__heading"> Filter </p>
         {%- endunless -%}
-      
-        
+
+
         {%- for filter in collection.filters -%}
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
-        
+
         <!-- De som er lister, feks tilgjengelighet og størrelse -->
         {% when 'list' %}
 
         <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
-       
+
           <!-- Label på filteret, feks "Tilgjengelighet" -->
           <summary class="facets__summary">
             <div>
@@ -52,11 +52,11 @@
               {% render 'icon-caret' %}
             </div>
           </summary>
-          
-          
-          
+
+
+
           <div class="facets__display">
-            
+
             <!-- Skrift som sto mellom "Størrelser" og størrelsene -->
             {% comment %}
             <div class="facets__header">
@@ -90,15 +90,15 @@
                 </label>
               </li>
               {%- endfor -%}
-              
+
             </ul>
-            
+
           </div>
 
         </details>
-        
-        
-        
+
+
+
         <!-- Prisen -->
         {% when 'price_range' %}
         {% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
@@ -115,9 +115,9 @@
               {% render 'icon-caret' %}
             </div>
           </summary>
-          
-          
-          
+
+
+
           <div class="facets__display">
 
             {% comment %}
@@ -176,8 +176,8 @@
 
           	</price-range>
       	  </div>
-      
-      
+
+
       	</details>
     {% endcase %}
 
@@ -214,11 +214,11 @@
               <svg class="icon icon-checkmark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" fill="none" width="10px" height="10px">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z" fill="currentColor"/>
               </svg>
-              
+
               Mye støtte
             </label>
           </li>
-            
+
           <li>
             <label class="facet-checkbox">
               <input type="checkbox"
@@ -234,11 +234,11 @@
               <svg class="icon icon-checkmark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" fill="none" width="10px" height="10px">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z" fill="currentColor"/>
               </svg>
-              
+
               Generell støtte
             </label>
           </li>
-            
+
           <li>
             <label class="facet-checkbox">
               <input type="checkbox"
@@ -254,22 +254,21 @@
               <svg class="icon icon-checkmark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" fill="none" width="10px" height="10px">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z" fill="currentColor"/>
               </svg>
-              
               Mindre støtte
             </label>
           </li>
         </ul>
       </div>
     </details>
-        
+
     {% endif %}
-    
+
     <noscript>
       <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
     </noscript>
     </div>
-  
-          <div class="active-facets active-facets-desktop">
+
+<div class="active-facets active-facets-desktop">
             <a href="{{ collection.url }}?sort_by={{ sort_by }}" class="active-facets__button button button--secondary js-facet-remove"> Fjern valgte filter </a>
             {%- for filter in collection.filters -%}
               {%- for value in filter.active_values -%}
