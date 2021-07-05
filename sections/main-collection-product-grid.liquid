@@ -190,10 +190,10 @@
     
         <details class="disclosure-has-popup facets__disclosure js-filter" >
        
-          <!-- Label på filteret, feks "Tilgjengelighet" -->
+          <!-- Label på filteret, "Støttegradering" -->
           <summary class="facets__summary">
             <div>
-              <span>we</span>
+              <span>Støttegradering</span>
               {% render 'icon-caret' %}
             </div>
           </summary>
@@ -201,15 +201,6 @@
           
           
           <div class="facets__display">
-            
-            <!-- Skrift som sto mellom "Størrelser" og størrelsene -->
-            {% comment %}
-            <div class="facets__header">
-              <span class="facets__selected no-js-hidden">{{ 'sections.collection_template.filters_selected' | t: count: filter.active_values.size }}</span>
-              <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
-            </div>
-            {% endcomment %}
-
 
             <!-- Listen med muligheter, feks størrelser -->
             <ul class="facets__list list-unstyled" role="list">
