@@ -91,6 +91,10 @@
               </li>
               {%- endfor -%}
               <script>console.log({{ filter.label | json }});</script>
+              <li class="list-menu__item facets__item">
+                <label for="hey" >
+                </label>
+              </li>
               
               <li class="list-menu__item facets__item">
                 <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
