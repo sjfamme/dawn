@@ -29,10 +29,11 @@
         
         
 			<div class="facets__wrapper">
+              {% comment %}
 				{%- unless collection.filters == empty -%}
 <!-- Original					<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p> -->
-					<p class="facets__heading"> Her kan du filtrere </p>
 				{%- endunless -%}
+              {% endcomment %}
           
 				{%- for filter in collection.filters -%}
 					{%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
