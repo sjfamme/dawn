@@ -36,23 +36,21 @@
       
         
         {%- for filter in collection.filters -%}
-              {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
-              {% case filter.type %}
-              {% when 'list' %}
+        {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+        {% case filter.type %}
+        {% when 'list' %}
 
         <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
        
-          {% comment %}
           <summary class="facets__summary">
-          
             <div>
               <span>{{ filter.label | escape }}</span>
               <span class="count-bubble">{%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}</span>
               {% render 'icon-caret' %}
-            </div>
-          
+            </div>          
           </summary>
-          {% endcomment %}
+          
+          
           
           <div class="facets__display">
                     <div class="facets__header">
