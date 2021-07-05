@@ -130,6 +130,8 @@
             <!-- Rangen fra det billigste til dyreste objektet -->
             <price-range class="facets__price">
 
+              
+            {% comment %}
               <div class="field">
                 <span class="field__currency">{{ cart.currency.symbol }}</span>
                 <input class="field__input"
@@ -149,6 +151,7 @@
                 </input>
               	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
               </div>
+            {% endcomment %}
 
        		  <div class="field">
               	<span class="field__currency">{{ cart.currency.symbol }}</span>
