@@ -27,12 +27,12 @@
       
       <div class="facets__wrapper">
         
-        <!-- Tittel på filtrering -->
-        {% comment %}
         {%- unless collection.filters == empty -%}
+        {% comment %}
         	<p class="facets__heading">{{ 'sections.collection_template.filter_by_label' | t }}</p>
-        {%- endunless -%}
 		{% endcomment %}
+        	<p class="facets__heading"> Tittel </p>
+        {%- endunless -%}
       
         
         {%- for filter in collection.filters -%}
