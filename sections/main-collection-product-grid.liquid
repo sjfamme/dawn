@@ -101,21 +101,22 @@
               
 
               <!-- Start case -->
-              {% when 'price_range' %}
-                {% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
-                {% assign uses_comma_decimals = false %}
-                {% if currencies_using_comma_decimals contains cart.currency.iso_code %}
-                  {% assign uses_comma_decimals = true %}
-                {% endif %}
+              	{% when 'price_range' %}
+              		{% assign currencies_using_comma_decimals = "ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND" | split: ',' %}
+                	{% assign uses_comma_decimals = false %}
+              		{% if currencies_using_comma_decimals contains cart.currency.iso_code %}
+                  		{% assign uses_comma_decimals = true %}
+                	{% endif %}
 
-                <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
-                  <summary class="facets__summary">
-                    <div>
-                      <span>{{ filter.label | escape }}</span>
-                      <span class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
-                      {% render 'icon-caret' %}
-                    </div>
-                  </summary>
+              		<!-- Start details -->
+                	<details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+                  		<summary class="facets__summary">
+                    		<div>
+                    			<span>{{ filter.label | escape }}</span>
+                              	<span class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
+                              	{% render 'icon-caret' %}
+                            </div>
+                        </summary>
                   
                   
                   
