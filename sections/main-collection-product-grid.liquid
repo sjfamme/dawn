@@ -126,60 +126,63 @@
                       		{%- assign max_price_amount = filter.range_max | money | escape -%}
                       		<span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
                       		<a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
-                    </div>
+                    	</div>
                     
-                    <!-- Start price range -->
-                    <price-range class="facets__price">
-                    	<div class="field">
-                        	<span class="field__currency">{{ cart.currency.symbol }}</span>
-                        	<input class="field__input"
-                                   name="{{ filter.min_value.param_name }}"
-                                   id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                                   {%- if filter.min_value.value -%}
-                                   {%- if uses_comma_decimals -%}
-                                   value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                   {%- else -%}
-                                   value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
-                                   {% endif %}
-                                   {%- endif -%}
-                                   type="number"
-                                   placeholder="0"
-                                   min="0"
-                                   max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+                        <!-- Start price range -->
+                        <price-range class="facets__price">
+                            <div class="field">
+                                <span class="field__currency">{{ cart.currency.symbol }}</span>
+                                <input class="field__input"
+                                       name="{{ filter.min_value.param_name }}"
+                                       id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                                       {%- if filter.min_value.value -%}
+                                       {%- if uses_comma_decimals -%}
+                                       value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                       {%- else -%}
+                                       value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                       {% endif %}
+                                       {%- endif -%}
+                                       type="number"
+                                       placeholder="0"
+                                       min="0"
+                                       max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
 
-                          	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
-                      	</div>
-                      
-                      	<div class="field">
-                        	<span class="field__currency">{{ cart.currency.symbol }}</span>
-                        	<input  class="field__input"
-                                    name="{{ filter.max_value.param_name }}"
-                                    id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                                    {%- if filter.max_value.value -%}
-                                      {%- if uses_comma_decimals -%}
-                                        value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                      {%- else -%}
-                                        value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
-                                      {% endif %}
-                                    {%- endif -%}
-                                    type="number"
-                                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                                    min="0"
-                                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
-	                        
-                          	<label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
-                      	</div>
-                    </div>
+                                <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
+                            </div>
+
+                            <div class="field">
+                                <span class="field__currency">{{ cart.currency.symbol }}</span>
+                                <input  class="field__input"
+                                        name="{{ filter.max_value.param_name }}"
+                                        id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                                        {%- if filter.max_value.value -%}
+                                          {%- if uses_comma_decimals -%}
+                                            value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                          {%- else -%}
+                                            value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                          {% endif %}
+                                        {%- endif -%}
+                                        type="number"
+                                        placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                        min="0"
+                                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+
+                                <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
+                            </div>
+                    
+                          </price-range>
+                	<!-- End price range -->
+                          
+                          </div>
                     <!-- End facets__display -->
-                      
-                  </price-range>
-                  <!-- End price range -->
+
+                    
           
               	</details>
       			<!-- End details -->
       
               {% endcase %}
-      			<!-- End case -->
+      		  <!-- End case -->
 
             {%- endfor -%}
             <noscript>
