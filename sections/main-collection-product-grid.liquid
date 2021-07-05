@@ -183,13 +183,17 @@
     
     
     
+    
+    
+    
+    {%- endfor -%}
+    
     <!-- CUstom -->
     <script>console.log({{ collection | json }});</script>
     {% if collection.title contains "Bra" %}
     
     
        
-                  {% comment %}
           <!-- Label på filteret, "Støttegradering" -->
           <summary class="facets__summary">
             <div>
@@ -200,6 +204,7 @@
           
           
           
+                  {% comment %}
           <div class="facets__display">
             <ul class="facets__list list-unstyled" role="list">
               <li class="list-menu__item facets__item">
@@ -229,9 +234,6 @@
         
         
   {% endif %}
-    
-    
-    {%- endfor -%}
     
     <noscript>
       <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
