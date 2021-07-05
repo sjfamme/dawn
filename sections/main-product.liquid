@@ -394,6 +394,7 @@
                             </div>
 
                             {% assign labelID = 2 %}
+                <script>console.log({{ product | json }});</script>
 
                             {% comment %} ====== OTHER COLOR NAMES ====== {% endcomment %}
                             {% paginate collections.all.products by 1000 %}
