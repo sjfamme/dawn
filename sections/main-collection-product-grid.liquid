@@ -576,6 +576,13 @@
                 add_image_padding: section.settings.add_image_padding,
                 show_vendor: section.settings.show_vendor,
               %}
+              
+              <script>
+                console.log({{ product.title | json }});
+                console.log({{ product.tags | json }});
+                console.log({{ product.title | json }});
+              
+              </script>
 
               <div class="product-groups">
                 {% comment %} ====== ASSIGN VARIABLES ====== {% endcomment %}
@@ -646,51 +653,9 @@
                         {% endif %}
                     {% endfor %}
                 {% endpaginate %}
-
-                        <style>
-                            #other_product_colors_img img:hover{
-                                /* Change main pic to the hovered over one */
-                            }
-                        </style>
-
-                        <div class="product-groups__titles">
-
-                            {% comment %} ====== CURRENT COLOR NAME ====== {% endcomment %}
-                            <div class="product-label default-product-label" data-toggle="toggle1">
-                                {{ current_product_color }}
-                            </div>
-
-                            {% assign labelID = 2 %}
-
-                            {% comment %} ====== OTHER COLOR NAMES ====== {% endcomment %}
-                            {% paginate collections.all.products by 1000 %}
-                                {% for product in collections.all.products %}
-                                    {% if product.tags contains current_group_tag %}
-                                        {% unless current_product_title == product.title %}
-                                            <div class="product-label" data-toggle="toggle{{ labelID }}">
-
-                                                {% assign temp_title_parts = product.title | split: ' ' %}
-                                                {% for product_color in product_colors %}
-                                                    {% if temp_title_parts[2] contains product_color %}
-                                                        {% capture temp_product_color %}{{ temp_title_parts[0] }} {{ temp_title_parts[1] }} {{ temp_title_parts[2] }}{% endcapture %}
-                                                    {% elsif temp_title_parts[1] contains product_color %}
-                                                        {% capture temp_product_color %}{{ temp_title_parts[0] }} {{ temp_title_parts[1] }}{% endcapture %}
-                                                    {% elsif temp_title_parts[0] contains product_color %}
-                                                        {% capture temp_product_color %}{{ temp_title_parts[0] }}{% endcapture %}
-                                                    {% endif %}
-                                                {% endfor %}
-
-                                                {{ temp_product_color }}
-                                            </div>
-                                            {% assign labelID = labelID | plus: 1 %}
-                                        {% endunless %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% endpaginate %}
-                        </div>
-                    </div>
+                </div>
                 {% endif %}
-            </div>
+              </div>
 
             </li>
           {%- endfor -%}
