@@ -183,8 +183,8 @@
 
     {%- endfor -%}
 
+        {% comment %}
     <!-- CUstom -->
-    <script>console.log({{ collection | json }});</script>
     {% if collection.title contains "Bra" %}
 
     <details class="disclosure-has-popup facets__disclosure js-filter">
@@ -263,6 +263,7 @@
     </details>
 
     {% endif %}
+        {% endcomment %}
 
     <noscript>
       <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
